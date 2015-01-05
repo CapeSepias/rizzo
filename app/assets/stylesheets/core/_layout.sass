@@ -1,25 +1,5 @@
-// ----------------------------------------------------------------------------
-//
-// Body
-//
-// The below two lines (display, min-width) fix the background colours not stretching the
-// full page width on a small screen size
-//
-// Homepage is removed from this hack because it interferes with overflow-x
-// ----------------------------------------------------------------------------
-
 body
   background-color: $body-background
-  display: table
-  min-width: 100%
-  &.responsive
-    display: block
-
-.overthrow-enabled
-  .overthrow
-    overflow: auto
-    -webkit-overflow-scrolling: touch
-
 
 
 // -----------------------------------------------------------------------------
@@ -54,27 +34,18 @@ body
   @extend %clearfix
   margin: 0 auto
   position: relative
-  width: $fixed-layout-width
+  padding-left: 10px
+  padding-right: 10px
+  width: auto
+  +respond-to(wide-view)
+    width: $fixed-layout-width
 
   .layout--fluid &
     width: $fluid-layout-width
 
   .layout--ad-rail &
-    width: $adrail-layout-width
-
-  .responsive &
     width: auto
-    padding-left: 10px
-    padding-right: 10px
-    +respond-to(wide-view)
-      width: $fixed-layout-width
-
-      .layout--fluid &
-        width: $fluid-layout-width
-
-      .layout--ad-rail &
-        width: auto
-        max-width: $adrail-layout-width
+    max-width: $adrail-layout-width
 
   &.row__inner--full-width
     padding-left: 0

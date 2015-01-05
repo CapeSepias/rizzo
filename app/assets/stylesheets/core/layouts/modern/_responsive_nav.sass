@@ -7,6 +7,10 @@ $responsive-nav-width: 240px
   overflow: hidden
   width: 100%
 
+  @if $is-ie or global-variable-exists(fixed-width)
+    // Cater for padding on containers
+    min-width: $fixed-layout-width + 20px
+
 // The container for our off-screen navigation
 .nav-container
   +hardware-acceleration()

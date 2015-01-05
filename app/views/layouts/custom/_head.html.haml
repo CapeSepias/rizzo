@@ -15,7 +15,7 @@
 
 %link{ rel: "icon", type: "image/gif", href: "https://www.lonelyplanet.com/favicon.ico" }
 
-%meta{ name:"viewport", content: responsive ? "width=device-width, initial-scale=1" : "width=1024" }
+%meta{ name:"viewport", content: responsive && !@fixed_width_layout ? "width=device-width, initial-scale=1" : "width=1024" }
 
 - if include_js && app_core
   - content_for(:async_js) { "app_core" }
@@ -31,7 +31,7 @@
   = smart_stylesheet('core_legacy')
   = static_ui_stylesheet('app-core-legacy', (defined? secure) ? secure : false)
 - else
-  = smart_stylesheet('core')
+  = smart_stylesheet("core#{@fixed_width_layout ? '_fixed_width' : ''}")
 
 = yield :stylesheets
 = yield :pagination_links_rels

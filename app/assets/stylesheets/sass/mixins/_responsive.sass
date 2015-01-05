@@ -32,11 +32,12 @@
   @else
     $breakpoint: $screen-width
 
-  @if $is-ie == false
+  @if ($is-ie or global-variable-exists(fixed-width)) and $fallback
+    @content
+
+  @else
     @media only screen and (min-width : #{$breakpoint}px)
       @content
-  @else if $fallback
-    @content
 
 // -----------------------------------------------------------------------------
 // [doc]

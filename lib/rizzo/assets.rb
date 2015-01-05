@@ -7,6 +7,7 @@ module Rizzo::Assets
     [
       'core.css',
       'core_ie.css',
+      'core_fixed_width.css',
       'core_legacy.css',
       'core_legacy_ie.css',
       'omniture/s_code.js',
@@ -28,6 +29,7 @@ module Rizzo::Assets
     [
       'core.css',
       'core_ie.css',
+      'core_fixed_width.css',
       'omniture/s_code.js',
       'requirejs/require.js',
       'icons/active.css',
