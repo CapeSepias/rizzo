@@ -9,7 +9,6 @@ and the core content is rendered withing .row--content.
 There are three main types of layout currently available using Rizzo, each of which have preview pages:
 
 - [Responsive layout](/layouts/responsive)
-- [Fixed width layout](/layouts/core)
 - [Minimal layout](/layouts/minimal)
 - [Legacy layout](/layouts/legacy) - Provides backwards support for old applications
 

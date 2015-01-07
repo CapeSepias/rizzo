@@ -36,7 +36,6 @@ module LayoutSupport
         default_title:  false
       },
       modern: {
-        responsive:     true,
         app_core:       true,
         default_title:  false
       },
@@ -62,8 +61,7 @@ module LayoutSupport
       secure_responsive: {
         tynt:           false,
         secure:         true,
-        legacy_lp:      true,
-        responsive:     true
+        legacy_lp:      true
       },
       client_solutions: {
         include_js:     false,
@@ -79,7 +77,6 @@ module LayoutSupport
         legacy_lp:      true
       },
       legacy_responsive: {
-        responsive:     true,
         legacy_lp:      true
       }
     }
@@ -94,12 +91,18 @@ module LayoutSupport
   end
 
   def get_layout(route)
-    if route == "core" ||  route == "responsive" || route == "minimal"
+    if route == "responsive" || route == "minimal"
       return {
         layout: route,
         template: "layouts/examples/#{route}"
       }
+    elsif route == "fixed-width"
+      return {
+        layout: 'responsive',
+        template: "layouts/examples/responsive"
+      }
     end
+
     {
       layout: false,
       template: "layouts/custom/preview"

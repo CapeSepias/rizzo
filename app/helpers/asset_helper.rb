@@ -1,11 +1,12 @@
 module AssetHelper
 
   def smart_stylesheet(stylesheet)
+    # We don't need a fixed_width_ie stylesheet as old ie doesn't get mqs
     ie_stylesheet = "#{stylesheet.gsub("_fixed_width", "")}_ie"
 
     result = ''
     result += raw("<!--[if (gt IE 8) | (IEMobile)]><!-->")
-    result += stylesheet_link_tag "#{stylesheet}", :media => "all"
+    result += stylesheet_link_tag stylesheet, :media => "all"
     result += raw("<!--<![endif]-->")
     result += raw("<!--[if (lt IE 9) & (!IEMobile)]>")
     result += stylesheet_link_tag ie_stylesheet, :media => "all"

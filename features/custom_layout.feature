@@ -27,9 +27,9 @@ Feature: Custom Layouts
     And the body should have a class of responsive
 
   Scenario: it serves the default preview file
-    Given I go to "/layouts/core"
+    Given I go to "/layouts/fixed-width"
     Then the Preview route should be displayed
-    And the body should not have a class of responsive
+    And it should load the fixed width version
 
   Scenario: it serves the default preview file
     Given I go to "/layouts/minimal"

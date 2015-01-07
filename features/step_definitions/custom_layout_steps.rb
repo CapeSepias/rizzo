@@ -10,8 +10,8 @@ Then(/^the body should have a class of responsive$/) do
   page.should have_selector 'body.responsive'
 end
 
-Then(/^the body should not have a class of responsive$/) do
-  page.should_not have_selector 'body.responsive'
+Then(/^it should load the fixed width version$/) do
+  page.should have_xpath("//link[contains(@href, '/assets/core_fixed_width')]")
 end
 
 Then(/^primary nav should not be present$/) do
